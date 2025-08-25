@@ -2,13 +2,13 @@ package org.example;
 
 public class Fatura {
     //atributos
-    private Integer numero = 0;
-    private String descricao = " ";
-    private Integer quantidade = 0;
-    private Double precoPorItem = 0.0;
+    private String numero;
+    private String descricao;
+    private Integer quantidade;
+    private Double precoPorItem;
 
     //construtor
-    Fatura(Integer numero, String descricao, Integer quantidade, Double precoPorItem) {
+    Fatura(String numero, String descricao, Integer quantidade, Double precoPorItem) {
         this.numero = numero;
         this.descricao = descricao;
         this.quantidade = quantidade;
@@ -16,47 +16,49 @@ public class Fatura {
     }
 
     //métodos getters
-    Integer getNumero() {
+    public String getNumero() {
         return this.numero;
     }
 
-    String getDescricao() {
+    public String getDescricao() {
         return this.descricao;
     }
 
-    Integer getQuantidade() {
+    public Integer getQuantidade() {
         return this.quantidade;
     }
 
-    Double getPrecoPorItem() {
+    public Double getPrecoPorItem() {
         return this.precoPorItem;
     }
 
   //métodos setters
-    void setNumero(Integer numero) {
+    public void setNumero(String numero) {
             this.numero = numero;
     }
 
-    void setDescricao(String descricao) {
+    public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
 
-    void setQuantidade(Integer quantidade) {
+    public void setQuantidade(Integer quantidade) {
         this.quantidade = quantidade;
     }
 
-    void setPrecoPorItem(Double precoPorItem) {
+    public void setPrecoPorItem(Double precoPorItem) {
         this.precoPorItem = precoPorItem;
     }
 
  //metodo
- void getTotalFatura() {
-    if (this.quantidade < 0 || this.precoPorItem < 0) {
-        this.quantidade = 0;
-        this.precoPorItem = 0.0;
-    }
+ public Double getTotalFatura() {
+     Integer qtde = this.quantidade;
+     Double preco = this.precoPorItem;
 
-    return this.quantidade * this.precoPorItem;
+     if (this.quantidade < 0 || this.precoPorItem < 0) {
+        qtde = 0;
+        preco = 0.0;
+     }
+
+     return qtde * preco;
  }
-
 }
