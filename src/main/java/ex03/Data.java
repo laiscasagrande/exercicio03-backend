@@ -7,9 +7,9 @@ public class Data {
     private Integer ano;
 
     Data(Integer mes, Integer dia, Integer ano){
+        this.setAno(ano);
         this.setMes(mes);
         this.setDia(dia);
-        this.setAno(ano);
     }
 
     Integer getMes() {
